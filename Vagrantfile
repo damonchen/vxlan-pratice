@@ -13,8 +13,8 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   (1..3).each do |i| 
-    config.vm.define = "node#{i}" do |node|
-      node.vm.box = "ubuntu/trusty64"
+    config.vm.define "node#{i}" do |node|
+      node.vm.box = "ubuntu/xenial64"
       # 设置虚拟机的主机名
       node.vm.hostname = "node#{i}"
       node.vm.network "private_network", ip: "192.168.8.#{100+i}"
